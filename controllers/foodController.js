@@ -201,7 +201,7 @@ const foodController = {
   orderById: async (req, res) => {
     try {
       let order = await orderModel.findOne({
-        _id: mongodb.ObjectId(req.params.id),
+        _id: new mongodb.ObjectId(req.params.id),
       });
       res.send({
         statusCode: 200,
@@ -219,7 +219,7 @@ const foodController = {
   orderStatus: async (req, res) => {
     try {
       let order = await orderModel.findOne({
-        _id: mongodb.ObjectId(req.params.id),
+        _id: new mongodb.ObjectId(req.params.id),
       });
       if (order) {
         let newStatus = "";
