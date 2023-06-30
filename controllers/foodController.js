@@ -62,7 +62,7 @@ const foodController = {
   deleteFood: async (req, res) => {
     try {
       let food = await foodModel.deleteOne({
-        _id: mongodb.ObjectId(req.params.id),
+        _id: new mongodb.ObjectId(req.params.id),
       });
       res.send({
         statusCode: 200,
